@@ -1,0 +1,20 @@
+name: PR Auto Comment
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR 안내 댓글 등록
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'PR이 생성되었습니다. 리뷰어와 라벨이 자동으로 지정됩니다. 감사합니다!'
+            }) 

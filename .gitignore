@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.env.*
+
+# VSCode
+.vscode/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 기타
+*.log
+
+# Frontend
+.next/
+dist/
+build/ 

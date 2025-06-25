@@ -1,0 +1,14 @@
+name: Issue Assigner
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 이슈 담당자 자동 지정
+        uses: pozil/auto-assign-issue@v1
+        with:
+          assignees: ihkim-secret 

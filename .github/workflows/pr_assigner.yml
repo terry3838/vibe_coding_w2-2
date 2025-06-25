@@ -1,0 +1,15 @@
+name: PR Assigner
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR 담당자 자동 지정
+        uses: actions/assigner@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/assigner.yml 
